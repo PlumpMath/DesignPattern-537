@@ -20,7 +20,7 @@ public class testThreadSingleton {
 				testThread th = new testThread();
 				th.run();
 				testheadlist.add(th);
-				Thread.sleep(500);
+				Thread.sleep(1);
 			}	
 		}catch(Exception e){
 			System.out.println(e.toString());
