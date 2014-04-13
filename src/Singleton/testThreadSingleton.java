@@ -2,9 +2,6 @@ package Singleton;
 
 import java.util.ArrayList;
 
-import com.sun.org.apache.xalan.internal.xsltc.dom.SingletonIterator;
-
-import sun.nio.cs.SingleByte;
 
 public class testThreadSingleton {
 	int num = 10;
@@ -21,17 +18,20 @@ public class testThreadSingleton {
 		try{
 			for(int i=0;i<num;i++){
 				testThread th = new testThread();
+				th.run();
 				testheadlist.add(th);
-				Thread.sleep(1000);
+				Thread.sleep(500);
 			}	
 		}catch(Exception e){
-			
+			System.out.println(e.toString());
 		}		
 	}
 	
 	public void startCheck(){
 		for(int i=0;i<10;i++){
-			System.out.println("thread("+i+"):"+testheadlist.get(i)+"¥n");
+			testThread th = testheadlist.get(i);
+			System.out.println("thread("+i+"):"+th.getTime()+"¥n");
+			th.stop();
 		}
 	}
 	
