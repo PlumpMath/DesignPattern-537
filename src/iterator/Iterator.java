@@ -1,5 +1,10 @@
 package iterator;
 
-public class Iterator {
-
+public interface Iterator {
+	public abstract boolean hasNext();
+	public abstract boolean hasPrevious();
+	public abstract Object next();
+	public abstract Object previous();
+	public abstract void decIterator();
+	public abstract void incIterator();
 }
